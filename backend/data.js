@@ -1,8 +1,22 @@
 const data ={
+  users: [
+    {
+      name: 'Quinton',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'Jazz',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    }],
     products:[
         {
-            _id: '1',
-            name: 'Brown Nike',
+           
+            title: 'Brown Nike',
+            name:'brown_nikes',
             category: 'Sneakers',
             size:'9',
             image: '/images/brownnike.jpg',
@@ -13,8 +27,9 @@ const data ={
             numReviews: 10,
             description: 'high quality product',
           }, {
-            _id: '2',
-            name: 'Brown Vans',
+           
+            title: 'Brown Vans',
+            name:'brown_vans',
             category: 'Sneakers',
             size: '8',
             image: '/images/brownvans.jpg',
@@ -25,8 +40,9 @@ const data ={
             numReviews: 10,
             description: 'high quality product',
           }, {
-            _id: '3',
-            name: 'Red Nikes',
+            
+            title: 'Red Nikes',
+            name:'red_nikes',
             category: 'Sneakers',
             size:'9',
             image: '/images/rednikes.jpg',
@@ -37,8 +53,9 @@ const data ={
             numReviews: 10,
             description: 'high quality product',
           }, {
-            _id: '4',
-            name: 'Uptowns',
+            
+            title: 'Uptowns',
+            name:'uptowns',
             category: 'Sneakers',
             size: '11',
             image: '/images/p1.jpg',
@@ -48,20 +65,12 @@ const data ={
             rating: 4.5,
             numReviews: 10,
             description: 'high quality product',
-          }, {
-            _id: '1',
-            name: 'Nike Slim Shirt',
-            category: 'Shirts',
-            image: '/images/p1.jpg',
-            price: 120,
-            countInStock: 10,
-            brand: 'Nike',
-            rating: 4.5,
-            numReviews: 10,
-            description: 'high quality product',
-          }, {
-            _id: '5',
-            name: 'White and Blue air force One',
+          }, 
+            
+          {
+            title: 'White and Blue air force One',
+
+            name: 'white-and-blue-air-force-one',
             category: 'Sneakers',
             size:'9.5',
             image: '/images/whaitandblueips.jpg',
@@ -73,8 +82,9 @@ const data ={
             description: 'high quality product',
           },
           {
-            _id: '6',
-            name: 'Yellow Nikes',
+           
+            title: 'Yellow Nikes',
+            name:'yellow_nikes',
             category: 'Sneakers',
             size:'10.5',
             image: '/images/yellownike.jpg',
