@@ -1,15 +1,16 @@
 import express from 'express';
-import User from '../models/userModel';
+import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';
-import bcrypy from 'bcrypt';
-import { BucketEncryption } from 'aws-cdk-lib/aws-s3';
+import User from '../models/userModel.js';
+import { generateToken } from '../utils.js';
+
 
 const userRouter = express.Router();
 
-userRouter.get('/signin', expressAsyncHandler(async(req,res)=> {
+userRouter.post('/signin', expressAsyncHandler(async(req,res)=> {
     const user = await User.findOne({email:req.body.email});
     if (user){
-        if (bcrypt.compareSync(user.password, req.body.password) {
+        if (bcrypt.compareSync(user.password, req.body.password)) {
             res.send({
             _id: user._id,
             name: user_name,

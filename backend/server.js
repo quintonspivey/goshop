@@ -17,8 +17,15 @@ const app = express();
 app.get('/',(req,res) =>{
     res.send('Server is ready');
 });
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
+app.use('/api/user', userRouter);
+app.use((err,req,res,next) => {
+    res.status(500).send({message: err.message});
+})
 const port = process.env.PORT || 5002;
 
 app.listen(port, () => {
