@@ -2,7 +2,8 @@ import React from 'react';
 import Home from './components/Home';
 import Header from './components/Header';
 import { BrowserRouter,Route, Routes } from 'react-router-dom';
-import { Router } from 'express';
+import { BrowsweRouter,Router,Routes } from 'express';
+
 
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
     <Header/>
     <Router>
 <Routes>
-    <Home/>
+    <Route path="/" element={Home}/>
+    
+    <Route path="/product" element={ProductPage}/>
     </Routes>
     </Router>
     </div>

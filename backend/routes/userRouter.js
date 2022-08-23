@@ -13,7 +13,7 @@ userRouter.post('/signin', expressAsyncHandler(async(req,res)=> {
         if (bcrypt.compareSync(user.password, req.body.password)) {
             res.send({
             _id: user._id,
-            name: user_name,
+            name: user._name,
             email: user.email,
             isAdmin:user.isAdmin,
             });
